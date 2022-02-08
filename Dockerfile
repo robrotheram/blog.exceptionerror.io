@@ -27,7 +27,7 @@ RUN adduser -D static
 
 # Switch to the scratch image
 FROM scratch
-
+LABEL org.opencontainers.image.source="https://github.com/robrotheram/blog.exceptionerror.io"
 EXPOSE 3000
 
 # Copy over the user
