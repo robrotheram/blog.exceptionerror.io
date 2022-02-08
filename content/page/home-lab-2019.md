@@ -1,0 +1,102 @@
++++
+author = "Robert Fletcher"
+categories = ["home-lab", "docker", "Authentication", "Update"]
+date = 2019-06-10T23:08:26Z
+description = ""
+draft = false
+image = "/images/Wikimedia_Foundation_Servers-8055_13.jpg"
+slug = "home-lab-2019"
+tags = ["home-lab", "docker", "Authentication", "Update"]
+title = "Home lab 2019"
+
++++
+
+
+Its summer 2019 time to upgrade the homelab services. As you can see below there are several to upgrade: from the Wiki (Bookstack) a taiga instance, monitoring provided by grafana and prometheus the password manager and authentication
+
+{{< figure src="/images/image.png" caption="Services&nbsp;" >}}
+
+For the most part the process was simple. As discussed in eariler blog enteries all these services are in docker containers and each service has its own docker compose file.
+
+To upgrade each service was just to do a 4 step process to pull the new images and start the containers again with the new images
+
+```
+docker-compose pull
+docker-compose down
+docker-compose rm 
+docker-compose up -d
+```
+
+There were a couple of minor changes needed. The Taiga container is custom as it has my own openid connect plugin [https://github.com/robrotheram/taiga-contrib-openid-auth](https://github.com/robrotheram/taiga-contrib-openid-auth) so it can talk to keycloak. The other larger change we to use a standard image for bookstack `linuxserver/bookstack:latest`
+
+
+
+The final thing to upgrade and the biggest challenge was the Guacamole instance. First I wanted a way for it to work behind my reverse proxy vpn connection (for the past I had to open up a port on my firewall hate doing that) This was solved by a combination of setting up a new tincd client on the box that was running the Guacamole docker container so connections from the bastion host gets directly forwarding to it without going through a second host. [https://blog.robrotheram.com/2017/03/29/home-lab-project-part-3/](https://blog.robrotheram.com/2017/03/29/home-lab-project-part-3/) about my crazy networking setup.  But in the end I also needed to tweak the reverse proxy settings and added a deicate route for the traffic Guacamole
+
+```
+server {
+    server_name remote.*********;
+    location / {
+        proxy_http_version 1.1;
+        proxy_buffering off;
+        proxy_redirect off;
+        proxy_set_header Accept-Encoding "";
+        proxy_set_header Host $host;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $http_connection;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        access_log off;
+        proxy_pass http://**********;
+    }
+}
+
+
+```
+
+This fix my performance problems since the bastion host is a vps in Germany and my homelab is in England.  The next challenge authentication with keycloak for single signon.
+
+At first I set up a new client in keycloack an configured Guacamole
+
+{{< figure src="/images/Screenshot-from-2019-06-10-23-36-59.jpg" caption="keycloak client settings" >}}
+
+Guacamole config:
+
+```
+openid-authorization-endpoint: https://<keycloak instance>/auth/realms/master/protocol/openid-connect/auth
+openid-jwks-endpoint:  https://<keycloak instance>/auth/realms/master/protocol/openid-connect/certs
+openid-issuer:  https://<keycloak instance>/auth/realms/master
+openid-client-id: guacamole
+openid-redirect-uri: https://<guacamole instance>
+openid-username-claim-type: email
+openid-scope: openid email profile
+openid-allowed-clock-skew: 500
+```
+
+It did take a lot of trial and error to get to those config settings.  But the openID plugin was still not working.  From the searching the [Guacamole mailing list](http://mail-archives.apache.org/mod_mbox/guacamole-user/201904.mbox/<pony-265d2ad5bf1f549ad54f66034c41b29e89a03adc-fa3c123131f1dd4de2f5388521762dfc7285c6ea@user.guacamole.apache.org>) 
+
+openid plugin needs to load first to make sure this happens you need to rename `guacamole-auth-openid.jar` to something like `000guacamole-auth-openid.jar`
+
+Now we are getting closer, while trying to login using openID plug-in I noticed the bug of infinite redirects. This issue has since been very recently [https://github.com/apache/guacamole-client/pull/407](https://github.com/apache/guacamole-client/pull/407).
+
+The fix is not planned to be in a release untill 1.2.0, we are at 1.0.0 with 1.1.0 close by.  cant wait that long so lets pull that commit into the 1.0.0 and build the fix
+
+Building
+
+```
+git clone https://github.com/apache/guacamole-client
+git checkout 1.0.0
+git checkout -b open-id-fix
+git cherry-pick -m 1 0344ef30e45954d1252d44b9826c7eedad8b02f3
+
+cd extensions/guacamole-auth-openid
+mvn clean install
+```
+
+With the plugin build I can now deploy it and have a working login single signon Guacamole instance running.
+
+Before deploying the plugin you need to make sure you have created an admin user with the same name as the user you are login in as via keycloak so that you can add new users and connections.
+
+With all that now complete almost all the application except for bookstack support openid/single signon although I now not sure it has been worth the effort of not dealing with ldap . Ah well its been fun ride
+

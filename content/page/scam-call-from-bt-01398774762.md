@@ -1,0 +1,36 @@
++++
+author = "Robert Fletcher"
+categories = ["Robrotheram", "scam", "BT", "01398 774762"]
+date = 2017-08-28T14:34:53Z
+description = ""
+draft = false
+image = "/images/the-fake-kidnapping-phone-call-is-the-scariest-scam-in-new-york-right-now.jpg"
+slug = "scam-call-from-bt-01398774762"
+tags = ["Robrotheram", "scam", "BT", "01398 774762"]
+title = "Scam Call from BT (01398774762)"
+
++++
+
+
+So its bank holiday Monday I just come back from a lovely walk on the hills, just made a fresh cup of tea and I get this phone called claiming there are from BT. 
+The say that they have seen some unusual traffic on my internet connection and they say its not secure. This raised my spidey-sense that this is another of these scams where they want to install something on your computer.  Instead of hanging up I query to clarify what was wrong thinking that there is still a tiny chance that it still could be from BT I do not have anywhere near normal network traffic (cough cough hp cluster cough cough). But the person replied that the connection is not secure and some BS about banking etc, I replied some tetchy talk about this makes no sense insert some talk about my use of VPS and sites use SSL. No they still talked about not being secure, OK they are definitely not from BT.
+```
+Caller: Is you PC on?
+Me: Yep it is on(it is rarely off) 
+Caller: what OS is it? 
+Me: Linux. 
+Caller: OK I am passing you over to my supervisor. 
+Me: (OK I thought, lets see what they ask next)
+Supervisor: Hello what can you see
+Me: a command prompt
+Supervisor: What?, What do you see?
+Me: well its a command prompt, bash. 
+Supervisor: errr... (then transfers me to someone else)
+Supervisor 2: What do you see?
+Me: Its a Linux command prompt bash. 
+Supervisor 2:(instantly hangs up the call)
+```
+I wish I had a coppy of windows that I could spinup into a vm to keep them talking, but I don't. Also I really wanted to get back to my cup of tea, I also treated my self to a nice slice of flapjack.
+
+Just a reminder if there are calling from a company and want you to do something with you PC do not do it. hang up find out the phone-number and google it it probably be plenty of warning about it. The phone number in question I had was 01398 774762
+
