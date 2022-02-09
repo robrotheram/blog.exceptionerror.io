@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: ghcr.io/robrotheram/blog
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: latest
   commit: 0a62dc46d242732b1ccf1629467edbd7c9f62375
 imagePullSecrets: []
