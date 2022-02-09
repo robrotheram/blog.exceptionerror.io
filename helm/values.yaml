@@ -3,7 +3,7 @@ image:
   repository: ghcr.io/robrotheram/blog
   pullPolicy: Always
   tag: latest
-  commit: 505f4a03570d14ff671cb4751de32622bca280b3
+  commit: bf9f42684a7ad3432d06db64a840e08735147957
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: blog-exceptionerror-io
@@ -15,16 +15,20 @@ ingress:
   className: ''
   annotations:
     kubernetes.io/ingress.class: traefik
+<<<<<<< HEAD
     cert-manager.io/cluster-issuer: "letsencrypt-staging"
+=======
+    cert-manager.io/issuer: letsencrypt-staging
+>>>>>>> 3bd1b7227b0929628b34efe55130c4a32f56efcf
   hosts:
     - host: blog.exceptionerror.io
       paths:
         - path: /
           pathType: Prefix
   tls:
-  - hosts:
-    - blog.exceptionerror.io
-    secretName: staging-blog-tls 
+    - hosts:
+        - blog.exceptionerror.io
+      secretName: staging-blog-tls
 resources:
   limits:
     cpu: 100m
