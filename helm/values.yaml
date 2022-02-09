@@ -22,9 +22,9 @@ ingress:
         - path: /
           pathType: Prefix
   tls:
-    - hosts:
-      - blog.exceptionerror.io
-    secretName: staging-blog-tls
+  - hosts:
+    - blog.exceptionerror.io
+    secretName: staging-blog-tls 
 resources:
   limits:
     cpu: 100m
