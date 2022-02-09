@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     name: update the helm
     steps:
+     - uses: actions/checkout@v2
      - name: Update values.yaml
        uses: fjogeleit/yaml-update-action@master
        with:
