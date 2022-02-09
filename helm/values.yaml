@@ -3,7 +3,7 @@ image:
   repository: ghcr.io/robrotheram/blog
   pullPolicy: Always
   tag: latest
-  commit: 6fa390e57b17274686e28208ec339e1c58e70c8b
+  commit: 46949e1923f5f3ec47049aa3355c7c9114093502
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: blog-exceptionerror-io
