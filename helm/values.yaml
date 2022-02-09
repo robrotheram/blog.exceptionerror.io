@@ -15,12 +15,16 @@ ingress:
   className: ''
   annotations:
     kubernetes.io/ingress.class: traefik
+    cert-manager.io/issuer: "letsencrypt-staging"
   hosts:
     - host: blog.exceptionerror.io
       paths:
         - path: /
           pathType: Prefix
-  tls: []
+  tls:
+    - hosts:
+      - blog.exceptionerror.io
+    secretName: staging-blog-tls
 resources:
   limits:
     cpu: 100m
