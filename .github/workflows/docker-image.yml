@@ -35,6 +35,7 @@ jobs:
           valueFile: 'helm/values.yaml'
           propertyPath: 'image.commit'
           value: '{{ github.sha }}'
+          branch: 'main'
           commitChange: true
           updateFile: true
           message: "Update Helm"
