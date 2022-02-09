@@ -4,7 +4,6 @@ metadata:
   name: {{ include "blog.exceptionerror.io.fullname" . }}
   labels:
     {{- include "blog.exceptionerror.io.labels" . | nindent 4 }}
-    commitHash: {{ .Values.image.commit }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -18,6 +17,7 @@ spec:
       {{- end }}
       labels:
         {{- include "blog.exceptionerror.io.selectorLabels" . | nindent 8 }}
+        commitHash: {{ .Values.image.commit }}
         
     spec:
       {{- with .Values.imagePullSecrets }}
