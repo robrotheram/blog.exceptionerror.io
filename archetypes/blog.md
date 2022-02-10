@@ -3,8 +3,8 @@ author = "Robert Fletcher"
 date = {{ now.Format "2006-01-02T15:04:05Z" }}
 description = ""
 draft = false
-image = "/images/Wikimedia_Foundation_Servers-8055_13.jpg"
-slug = "home-lab-part-2"
+image = "/images/{{title}}/featured.png"
+slug = "{{ title }}"
 tags = ["Home", "lab", "Virtual macheines", "home-lab"]
 title = "{{ .File.TranslationBaseName | replaceRE "-" " " | title }}"
 +++

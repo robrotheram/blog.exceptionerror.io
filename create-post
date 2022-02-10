@@ -2,3 +2,5 @@
 TITLE=$(date '+%Y-%m-%d')
 for var in "$@"; do TITLE=$TITLE-"$var"; done
 hugo new blog/$TITLE.md
+mkdir -p ./static/images/$TITLE
+code ./content/blog/$TITLE.md
