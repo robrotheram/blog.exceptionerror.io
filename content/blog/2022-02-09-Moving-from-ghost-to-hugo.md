@@ -5,17 +5,17 @@ description = ""
 draft = false
 image = "/images/2022-02-09-Moving-from-ghost-to-hugo/feature.png"
 slug = "2022-02-09-Moving-from-ghost-to-hugo"
-tags = ["Home", "lab", "Virtual macheines", "hugo"]
+tags = ["Home", "lab", "Virtual machine's", "hugo"]
 title = "Self hosting an auto-updating blog that is smaller then one photo"
 +++
 
-The title is not clickbait this entire site and webserver is being hosted in a container that is smaller then one of the photos I have taken. Ok slight caviat my photos are taken in RAW and can average around 50mb per image. So maybe hosting an enitre blog in 50mb. But before you guess no it not using volume mounts or anything like that all the images and post content is bundled in the contaienr. 
+The title is not clickbait this entire site and webserver is being hosted in a container that is smaller then one of the photos I have taken. Ok slight cavitate my photos are taken in RAW and can average around 50mb per image. So maybe hosting an entire blog in 50mb. But before you guess no it not using volume mounts or anything like that all the images and post content is bundled in the container. 
 
-So why did I do this? Well I am currently in the proccess of changing how I am managing services I am  running on my server and I wanted to get away from my old blogging platform ghost. While the editing and choice of themes are wonderful some of the new features and the market ghost is targeting is just not for me achem.. Newsletter, that you can not turn off. This tiny little blog does not need a news letter I dont thing anyone including myself need more email notifications. Anyway rant over, Time to pick a new plaform. 
+So why did I do this? Well I am currently in the process of changing how I am managing services I am  running on my server and I wanted to get away from my old blogging platform ghost. While the editing and choice of themes are wonderful some of the new features and the market ghost is targeting is just not for me ahem. Newsletter, that you can not turn off. This tiny little blog does not need a news letter I don't thing anyone including myself need more email notifications. Anyway rant over, Time to pick a new platform. 
 
-One of the other things I wanted to remove in this cleanup was reducing the number of databases and other services I am running so I needed a system that has no database. Enter Static Site Generators. Write everything in markdown and render some static HTML pages that you just point some webserver and hazzah you site. While there are many generators to use I went with hugo in part since is well supported, written in my favourite language but more importantly while browsing around I came accross this [blog post](https://dwmkerr.com/migrating-from-ghost-to-hugo/) by Dave Kerr
+One of the other things I wanted to remove in this cleanup was reducing the number of databases and other services I am running so I needed a system that has no database. Enter Static Site Generators. Write everything in markdown and render some static HTML pages that you just point some webserver and huzzah you site. While there are many generators to use I went with hugo in part since is well supported, written in my favorite language but more importantly while browsing around I came across this [blog post](https://dwmkerr.com/migrating-from-ghost-to-hugo/) by Dave Kerr
 
-In that post they mentioned a tool https://github.com/jbarone/ghostToHugo that does most of the heavy lifiting on converting the blog to hugo. While using the script I noticed some changes I wanted to make mainly due to the way ghost handles images in 4.x which now stores images as: 
+In that post they mentioned a tool https://github.com/jbarone/ghostToHugo that does most of the heavy lifting on converting the blog to hugo. While using the script I noticed some changes I wanted to make mainly due to the way ghost handles images in 4.x which now stores images as: 
 ```
 __GHOST_URL__/content/images/2017/03/HomeLabDiagram.png
 ```
@@ -26,7 +26,7 @@ Which does not work well in hugo. So time to break out vscode and create a PR th
 So if you want to use these extra changes you can view them on my fork: https://github.com/robrotheram/ghostToHugo
 
 
-Excellent now the blog is exported all that is really left to do was pick a theme make some minor changes to suit my own needs and to make it look almost like my ghost blog and we are done. One static gernerating blog. 
+Excellent now the blog is exported all that is really left to do was pick a theme make some minor changes to suit my own needs and to make it look almost like my ghost blog and we are done. One static generating blog. 
 
 ---
 
@@ -35,7 +35,7 @@ Excellent now the blog is exported all that is really left to do was pick a them
 
 
 
-Now for the fun to begin creating a container that is less then one photo. Again on my travels around the net I found this post problem from hackernew. https://lipanski.com/posts/smallest-docker-image-static-website
+Now for the fun to begin creating a container that is less then one photo. Again on my travels around the net I found this post problem from hacker-news. https://lipanski.com/posts/smallest-docker-image-static-website
 In there Florin Lipan explains how they went on a journey to create a single-layer image of 186KB webserver. 
 
 So all that is left is that we create one crazy looking multistage dockerfile that uses hugo to generate the static site content build the tiny webserver and bundle it all into one image that is 50mb in size 
@@ -95,13 +95,13 @@ CMD ["/thttpd", "-D", "-h", "0.0.0.0", "-p", "3000", "-d", "/home/static", "-u",
 ---
 ## Automate all the things
 
-One of the things you read around static site generators such as hugo is the ability to link it to something like netify so that you can commit your changes and see the result on the net. Grand but I self host and I want to do the same. Lets crack this puzzel. 
+One of the things you read around static site generators such as hugo is the ability to link it to something like Netlify so that you can commit your changes and see the result on the net. Grand but I self host and I want to do the same. Lets crack this puzzle. 
 
-OK one caviate here is that I going to use Github Actions in part as I do not currently have a CI setup at home but you could easily run the commands as part of a git hook or build it into your own pipeline. 
+OK one cavitate here is that I going to use Github Actions in part as I do not currently have a CI setup at home but you could easily run the commands as part of a git hook or build it into your own pipeline. 
 
 The pipeline below does only 3 basic things
-- Builds the Containr using the dockerfile from above
-- Push the container into a registry this time githubs own
+- Builds the container using the dockerfile from above
+- Push the container into a registry this time Github's own version. 
 - Finally update a helm chart with the git hash. More on this later
 
 ```yml
@@ -174,9 +174,9 @@ Argo CD automates the deployment of the desired application states in the specif
 
 In the repo that contains the hugo static site and Docker file also lives a helm chart that tells Kubernetes how to deploy this site which also includes managing the SSL certificates. 
 
-The final step in the Github action was to update a value in this helm chart that triggers argocd to do a redeployment. Argo will then download the new container image that contains the updated blog and redeploys it. Once I commit my updates to the blog it takes the lenght of time to go make a cup of tea for my changes to be avalible. Best of all its all opensource (well once I replace github actions)
+The final step in the Github action was to update a value in this helm chart that triggers argocd to do a redeployment. Argo will then download the new container image that contains the updated blog and redeploys it. Once I commit my updates to the blog it takes the lenght of time to go make a cup of tea for my changes to be available. Best of all its all open source (well once I replace github actions)
 
 
-If all has gone to plan and you are reading this post then everything above will have justed worked. To be honest its taken about 3 days to get this far and it is definitly interesting journey not sure if anyone else would be mad enough to try it. 
+If all has gone to plan and you are reading this post then everything above will have justed worked. To be honest its taken about 3 days to get this far and it is definitely interesting journey not sure if anyone else would be mad enough to try it. 
 
 {{<figure src="/images/2022-02-09-Moving-from-ghost-to-hugo/argocd.png" >}}
