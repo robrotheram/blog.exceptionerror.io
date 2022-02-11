@@ -6,10 +6,10 @@ draft = false
 image = "/images/2022-02-09-Moving-from-ghost-to-hugo/feature.png"
 slug = "2022-02-09-Moving-from-ghost-to-hugo"
 tags = ["Home", "lab", "Virtual machine's", "hugo"]
-title = "Self hosting an auto-updating blog that is smaller then one photo"
+title = "Self hosting an auto-updating blog that is smaller than one photo"
 +++
 
-The title is not clickbait this entire site and webserver is being hosted in a container that is smaller then one of the photos I have taken. Ok slight cavitate my photos are taken in RAW and can average around 50mb per image. So maybe hosting an entire blog in 50mb. But before you guess no it not using volume mounts or anything like that all the images and post content is bundled in the container. 
+The title is not clickbait this entire site and webserver is being hosted in a container that is smaller than one of the photos I have taken. Ok slight cavitate my photos are taken in RAW and can average around 50mb per image. So maybe hosting an entire blog in 50mb. But before you guess no it not using volume mounts or anything like that all the images and post content is bundled in the container. 
 
 So why did I do this? Well I am currently in the process of changing how I am managing services I am  running on my server and I wanted to get away from my old blogging platform ghost. While the editing and choice of themes are wonderful some of the new features and the market ghost is targeting is just not for me ahem. Newsletter, that you can not turn off. This tiny little blog does not need a news letter I don't thing anyone including myself need more email notifications. Anyway rant over, Time to pick a new platform. 
 
@@ -30,12 +30,12 @@ Excellent now the blog is exported all that is really left to do was pick a them
 
 ---
 
-## Building the Container that is smaller then one image
+## Building the Container that is smaller than one image
 
 
 
 
-Now for the fun to begin creating a container that is less then one photo. Again on my travels around the net I found this post problem from hacker-news. https://lipanski.com/posts/smallest-docker-image-static-website
+Now for the fun to begin creating a container that is less than one photo. Again on my travels around the net I found this post problem from hacker-news. https://lipanski.com/posts/smallest-docker-image-static-website
 In there Florin Lipan explains how they went on a journey to create a single-layer image of 186KB webserver. 
 
 So all that is left is that we create one crazy looking multistage dockerfile that uses hugo to generate the static site content build the tiny webserver and bundle it all into one image that is 50mb in size 
