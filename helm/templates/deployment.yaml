@@ -38,6 +38,8 @@ spec:
             httpGet:
               path: /
               port: blog-http
+            initialDelaySeconds: 10
+            periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /
