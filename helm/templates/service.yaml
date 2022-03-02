@@ -7,8 +7,8 @@ metadata:
 spec:
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: blog-http
       protocol: TCP
-      name: http
+      name: blog-http
   selector:
     {{- include "blog.exceptionerror.io.selectorLabels" . | nindent 4 }}
