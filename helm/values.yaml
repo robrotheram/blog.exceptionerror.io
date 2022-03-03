@@ -9,7 +9,7 @@ nameOverride: ''
 fullnameOverride: blog-exceptionerror-io
 podAnnotations: {}
 service:
-  port: 3000
+  port: 8080
 ingress:
   enabled: true
   className: ''

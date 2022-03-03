@@ -32,7 +32,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: blog-http
-              containerPort: 3000
+              containerPort: 8080
               protocol: TCP
           livenessProbe:
             tcpSocket:
