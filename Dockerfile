@@ -6,4 +6,5 @@ RUN wget -q https://github.com/gohugoio/hugo/releases/download/v0.92.1/hugo_0.92
 RUN npm ci && npm i -g postcss-cli && ./hugo -D --gc
 
 FROM bitnami/nginx:latest
+LABEL org.opencontainers.image.source="https://github.com/robrotheram/blog.exceptionerror.io"
 COPY --from=hugo /app/public /app
