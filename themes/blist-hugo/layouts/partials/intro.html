@@ -1,0 +1,13 @@
+<section class="{{ .Site.Params.ascentColor | default "bg-pink-50" }} " style="
+background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/header.jpeg);
+background-size: cover;
+background-position: left;
+">
+  <div class="container grid items-center max-w-screen-lg gap-4 px-6 py-12 mx-auto md:grid-cols-2 lg:gap-16">
+    <div>
+      <h1 class="mb-4 text-4xl font-bold">{{ .Site.Params.introTitle | safeHTML}}</h1>
+      <p class="text-lg font-light">{{ .Site.Params.introSubtitle | safeHTML}}</p>
+    </div>
+    <img class="rounded-lg shadow-sm" src="{{ .Site.Params.introPhoto }}" alt="{{ .Site.Title }}" />
+  </div>
+</section>

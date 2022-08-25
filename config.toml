@@ -1,7 +1,7 @@
 baseurl = ""
 metaDataFormat = "yaml"
 title = "My Ramblings "
-theme = "blist"
+theme = "blist-hugo"
 
 DefaultContentLanguage = "en"
 DefaultContentLanguageInSubdir = true
