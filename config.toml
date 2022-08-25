@@ -3,10 +3,19 @@ metaDataFormat = "yaml"
 title = "My Ramblings "
 theme = "blist"
 
-
-
 DefaultContentLanguage = "en"
 DefaultContentLanguageInSubdir = true
+[languages]
+  [languages.en]
+    contentDir = "content" #English
+    weight = 1
+    languageName = "English"
+    [languages.en.params]
+      introTitle = "Salutations👋 I'm Robert"
+      introSubtitle = "Big Data Engineer, Cloud lover, Linux Advocate and will dockerise anything I touch"
+      introPhoto = "/picture.jpg"
+      logo = "/blist-logo.png"
+   
 
 
 [params]
@@ -17,10 +26,6 @@ DefaultContentLanguageInSubdir = true
   enableSearch = true
   enableHeaderMenu = false
 
-  introTitle = "Salutations👋 I'm Robert"
-  introSubtitle = "Big Data Engineer, Cloud lover, Linux Advocate and will dockerise anything I touch"
-  introPhoto = "/picture.jpg"
-  
   contentDir = "content" #English
 
   # Custom copyright - optional
@@ -30,14 +35,13 @@ DefaultContentLanguageInSubdir = true
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
   # Reference: https://tailwindcss.com/docs/customizing-colors
-  ascentColor = "bg-green-300"
+  ascentColor = "bg-green-600"
 
+  hideOtherLanguages = true
 
 [[menu.main]]
-    name = "Blog"
-    url = "blog"
-    weight = 1
-
+  name = "Blog"
+  url = "/blog"
 
 [params.homepage.social]
   # Global params xommon for both languages

@@ -3,7 +3,7 @@ author = "Robert Fletcher"
 date = 2017-04-09T22:12:05Z
 description = ""
 draft = false
-image = "/images/start-up-wall-carousel1.jpg"
+thumbnail = "/images/start-up-wall-carousel1.jpg"
 slug = "planned-projects"
 title = "Planned Projects"
 

@@ -3,7 +3,7 @@ author = "Robert Fletcher"
 date = 2020-04-24T16:45:46Z
 description = ""
 draft = false
-image = "/images/elasticsearch-overview.jpg"
+thumbnail = "/images/elasticsearch-overview.jpg"
 slug = "elasitic-rbac-with-ldap"
 title = "Elasitic RBAC with LDAP"
 

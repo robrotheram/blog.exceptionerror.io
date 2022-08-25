@@ -3,7 +3,7 @@ author = "Robert Fletcher"
 date = 2017-12-29T16:06:59Z
 description = ""
 draft = false
-image = "/images/Capture-3-1.PNG"
+thumbnail = "/images/Capture-3-1.PNG"
 slug = "autumn-upgrades"
 title = "Autumn Upgrades"
 

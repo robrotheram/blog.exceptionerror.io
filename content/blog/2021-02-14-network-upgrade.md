@@ -3,7 +3,7 @@ author = "Robert Fletcher"
 date = 2021-02-14T15:04:21Z
 description = ""
 draft = false
-image = "/images/Traffic-SQ1.jpeg"
+thumbnail = "/images/Traffic-SQ1.jpeg"
 slug = "network-upgrade"
 title = "Home network upgrade to Ubiquiti"
 
