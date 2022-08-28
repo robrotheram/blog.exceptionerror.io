@@ -13,8 +13,7 @@ DefaultContentLanguageInSubdir = true
     [languages.en.params]
       introTitle = "Salutations👋 I'm Robert"
       introSubtitle = "Big Data Engineer, Cloud lover, Linux Advocate and will dockerise anything I touch"
-      introPhoto = "/picture.jpg"
-      logo = "/blist-logo.png"
+      introPhoto = "/picture.jpg"      
    
 
 
