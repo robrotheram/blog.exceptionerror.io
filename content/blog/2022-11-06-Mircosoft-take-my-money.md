@@ -9,10 +9,7 @@ tags = ["Mircosoft", "emails"]
 title = "Ok Mircosoft take my money"
 +++
 
-
-
 God Dam it Micorsoft fine just take my money!  
-
 
 The story starts last month when one of my parents fell for one of the gift card scammers email. To be fair to my parents the hacker did not compromised there account, I have tried to get them to use good password quaility.  What the scammers did was compromised their friend accound and send the email. Being unsure, my parent sent a email confirming the giftcard to their friend second account, which was good thining. But the scammer being extra crafty they also compromised their friend sceond account so when my prarent sent a email to the second account the scammer also responded prendting to be their friend.  Being busy at work my parent fell for it and baught and send the gift card.  Now down £100 and their pride I got some problems to solve. 
 
@@ -27,15 +24,3 @@ The world is moving on and now most things are online only to mange things as ph
 The final problem is more of a prediction I can see in the future. Looking at some of the new applications/services that are comming out in the last year or so e.g TailScale. They are not wanting to manage users/passwords (understandabled) so are offloading the responsiblity to third party idenity services. You know the ones, the login with Google, Microsoft etc. While some do support other idenitiy services they require Enterprise level accounts which for 4-5 people in total is no worth it. 
 
 I do not want a 2nd Job as the Family Tech Support that now elevated as a Enterprise admin. 
-
-
-
-
-
-
-
-
-
-
-
-
