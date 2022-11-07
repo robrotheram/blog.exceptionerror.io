@@ -13,6 +13,10 @@ God Dam it Microsoft, fine just take my money!
 
 The story starts last month when one of my parent's fell for one of the gift card scammers emails. To be fair to my parents the hacker did not compromise their account, I have tried to teach them good password quality. What the scammers did was compromised their friend's account and send the email. Being unsure about this out of the blue email, my parent sent an email confirming the gift-card to their friend second account, which was good thinking. But the scammer being extra crafty they also compromised their friend second account, so when my parent sent an email to the second account the scammer also responded pretending to be their friend. Being busy at work and getting an email confirming, they fell for it and bought and sent the gift card. 
 
+
+<img src="https://media.makeameme.org/created/scammers-scammers-everywhere-5c6259.jpg" width="100%">
+
+
 So, if you are reading this, first make sure you have a different password for every account and second enable 2 factor authentication if it is available. 
 
 The £100 the scammer got is annoying but what worse is this now affects me. I have now a very concerned parent who is now metaphorically jumping when they hear a car back firing. 
@@ -51,14 +55,13 @@ The problem is if I was looking at just managing email, I could use something li
 
 I want to reduce the support burden as much as possible.  
 
-![](https://uploads-us-west-2.insided.com/freshworks-en/attachment/439baa98-06e0-4781-ba4c-6ad8ec84b2f7.jpg) 
+![](https://aws1.discourse-cdn.com/business7/uploads/liquibase1/original/1X/e42fb8faacdc367ff0767e15c3dcc3557a9ad530.jpeg) 
 
  As much as I love tinkering with servers it's a bit like a person tinkering with a car. I would rather have a rented new car for the family to use that if there is a problem, I just send it to the garage for them to fix under warranty. Instead of the 3rd hand car that I am tinkering away at that half the time is broken. Since I want something with as much uptime as possible, option 3 is off the table. 
 
-Option 2 Google.  While I still have an old GSuite account which I have grandfathered in on the old subscription so currently its free which is a plus. But Google Workspace always feels like a 3rd class citizen of googles products, a pain to use and not feature complete. I could go on a 5-minute rant but this clip from the WAN show helps make my point. A Google Engineer explains why GSuite accounts are treated differently 
+Option 2 Google.  While I still have an old GSuite account which I have grandfathered in on the old subscription so currently its free which is a plus. But Google Workspace always feels like a 3rd class citizen of googles products, a pain to use and not feature complete. I could go on a 5-minute rant but this clip from the WAN show helps make my point. 
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/Uduia5slHdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
- 
-![](https://killedbygoogle.com/social/card.png)  
 
 Coupled the unfinished nature of the GSuite services with the fact that Google's support is sketchy at best and how long will it support it. Furthermore, I am not a fan of the new set of designs for Gmail. Sorry Google you were once so good now I am left with the final option Microsoft 😢.    
 
@@ -70,7 +73,7 @@ I can do all of the requirements listed above. It works with other apps that do 
  
 OK Microsoft just take my money.  
 
-![](https://i.kym-cdn.com/photos/images/original/000/264/241/9e9.gif) 
+<img src="https://i.kym-cdn.com/photos/images/original/000/264/241/9e9.gif" width="100%"/>
 
 I set up an account and 2 other users and have started playing around with all the options as a basic business account. Annoyingly currently all I got is positive things to say about the experience but I talk more in another post  
 
