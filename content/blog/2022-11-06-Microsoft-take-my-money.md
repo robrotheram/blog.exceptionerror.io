@@ -57,10 +57,11 @@ Instead the final 4th secret option. Microsoft business account. This is probabl
 
 I can do all of the requirements listed above. It works with other apps that do signing with X, Also since its a business account it has a separate set of privacy arrangements. Sure compered with personal family plan its more expensive but it has a lot more features then just email and since its Microsoft the learning curve for my folks will be less of a issue, again I do not want a 2nd life as a tech supporter.  So I left with the fact OK Microsoft just take my money 
 
+<div style="text-align: center;">
+
 ![](https://i.kym-cdn.com/photos/images/original/000/264/241/9e9.gif)
 
-
-
+</div>
 
 
 
