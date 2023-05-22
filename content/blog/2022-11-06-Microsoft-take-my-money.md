@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/images/2022-11-06-Microsoft-take-my-money/header.jpg"
 slug = "2022-11-06-OK-Microsoft-take-my-money"
 tags = ["Microsoft", "emails"]
-title = "Part 1 Ok Microsoft take my money"
+title = "Ok Microsoft take my money"
 +++
 
 God Dam it Microsoft, fine just take my money! 
