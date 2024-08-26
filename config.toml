@@ -12,7 +12,7 @@ DefaultContentLanguageInSubdir = true
     languageName = "English"
     [languages.en.params]
       introTitle = "Salutations👋 I'm Robert"
-      introSubtitle = "Big Data Engineer, Cloud lover, Linux Advocate and will dockerise anything I touch"
+      introSubtitle = "Senior Technical Consultant, Linux Advocate, I will containerize all the things!"
       introPhoto = "/picture.jpg"      
    
 
@@ -28,7 +28,7 @@ DefaultContentLanguageInSubdir = true
   contentDir = "content" #English
 
   # Custom copyright - optional
-  copyright = "Copyright © 2022 - Robert Fletcher · All rights reserved"
+  copyright = "Copyright © 2024 - Robert Fletcher · All rights reserved"
   favicon = "/favicon.ico"
 
   # Color for the intro details and social links block, not applicable for dark mode
