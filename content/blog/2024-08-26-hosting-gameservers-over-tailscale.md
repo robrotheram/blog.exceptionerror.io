@@ -6,6 +6,7 @@ title = 'Hosting Game Servers Over Tailscale'
 tags = ["Home", "lab", "Virtual machines", "home-lab"]
 thumbnail = "/images/2024-08-26-hosting-gameservers-over-tailscale/featured.png"
 slug = "hosting-game-servers-over-tailscale"
+images = ["/images/2024-08-26-hosting-gameservers-over-tailscale/featured.png"]
 +++
 
 A friend of mine came to me with a problem. He had a bunch of games servers that was being hosted internally on a old pc turned into a proxmox server. Currently the way to access these servers was opening more and more ports on the ISP provided router turning the firewall into something resembling swiss cheese. Furthermore being on a home internet connection there was no grantee that the External IP would remain static or be moved onto some form of Carrier grade NAT which would make it impossible for the public to connect to the gameservers. In this post I will document how we solved this using a cheep VPS and tailscale. 

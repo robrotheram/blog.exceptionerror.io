@@ -6,4 +6,5 @@ title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 tags = ["Home", "lab", "Virtual macheines", "home-lab"]
 thumbnail = "/images/{{.File.ContentBaseName }}/featured.png"
 slug = "{{ .File.ContentBaseName }}"
-++++++
+images = ["/images/{{.File.ContentBaseName }}/featured.png"]
++++

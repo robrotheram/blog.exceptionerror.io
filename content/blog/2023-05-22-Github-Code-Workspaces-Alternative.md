@@ -11,6 +11,7 @@ tags = [
     "Coder",
     "DevEX",
 ]
+images = ["/images/2023-05-22-Github-Code-Workspaces-Alternative/og-image.png"]
 +++
 
 As a Software developer when starting a new project, the first thing you must do is setup your workspace. Sometimes that is just git clone the repo to your laptop and you have all the tools installed. But I find most of the time you are presented with a blank server where you will do all your development in. Depending on how mature the project is and the makeup of the team you might just get a confluence page that contains 100 commands that you must run just to get a desktop and an IDE. If you are lucky someone will have automated the setup. But after writing these automation’s in almost every tool from bash, terraform and ansible they all require some form of upkeep, which is almost never the priority of the project especially if its short lived. On a good day this might take a new developer a day to get on-boarded onto a project and a lot of hand holding because those scripts will eventually break if not constantly maintained.   

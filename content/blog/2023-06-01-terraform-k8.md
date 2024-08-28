@@ -7,6 +7,7 @@ thumbnail = "/images/2023-05-21-Building-a-new-home-lab/thumbnail.png"
 slug = "2023-06-01-terraform-k8-gitops"
 tags = ["Homelab"]
 title = "GitOPS with Terraform and ArgoCD"
+images = ["/images/2023-05-21-Building-a-new-home-lab/thumbnail.png"]
 +++
 
 GitOps is getting a lot of buzz as the next evolution of DevOps, to put it in practice I am going to use it to manage my new Kubernetes cluster. I wanted to manage everything from application to DNS entries through an automated process, if I could I did not want to use any UI or type any command. 

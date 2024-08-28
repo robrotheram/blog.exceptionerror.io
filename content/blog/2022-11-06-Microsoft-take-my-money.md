@@ -7,6 +7,7 @@ thumbnail = "/images/2022-11-06-Microsoft-take-my-money/header.jpg"
 slug = "2022-11-06-OK-Microsoft-take-my-money"
 tags = ["Microsoft", "emails"]
 title = "Ok Microsoft take my money"
+images = ["/images/2022-11-06-Microsoft-take-my-money/header.jpg"]
 +++
 
 God Dam it Microsoft, fine just take my money! 
